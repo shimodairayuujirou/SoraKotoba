@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  sorakotoba
-//
-//  Created by 下平裕次郎 on R 7/10/30.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -19,6 +12,3 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
