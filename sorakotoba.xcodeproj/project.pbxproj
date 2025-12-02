@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5CF801D12EB316A8009D2DF3 /* sorakotoba */ = {
+		5C181C752EDEB017009054CE /* sorakotoba */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = sorakotoba;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 		5CF801C62EB316A8009D2DF3 = {
 			isa = PBXGroup;
 			children = (
-				5CF801D12EB316A8009D2DF3 /* sorakotoba */,
+				5C181C752EDEB017009054CE /* sorakotoba */,
 				5CF801DF2EB316B2009D2DF3 /* sorakotobaTests */,
 				5CF801E92EB316B2009D2DF3 /* sorakotobaUITests */,
 				5CF801D02EB316A8009D2DF3 /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				5CF801D12EB316A8009D2DF3 /* sorakotoba */,
+				5C181C752EDEB017009054CE /* sorakotoba */,
 			);
 			name = sorakotoba;
 			packageProductDependencies = (
@@ -171,7 +171,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					5CF801CE2EB316A8009D2DF3 = {
 						CreatedOnToolsVersion = 26.0.1;
@@ -328,6 +328,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -385,6 +386,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
