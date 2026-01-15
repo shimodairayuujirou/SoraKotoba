@@ -36,9 +36,22 @@
 		5CF801E62EB316B2009D2DF3 /* sorakotobaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sorakotobaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5CE8F7C12F18B61500E817C5 /* Exceptions for "sorakotoba" folder in "sorakotoba" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model/FavoriteModel.swift,
+			);
+			target = 5CF801CE2EB316A8009D2DF3 /* sorakotoba */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5C181C752EDEB017009054CE /* sorakotoba */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5CE8F7C12F18B61500E817C5 /* Exceptions for "sorakotoba" folder in "sorakotoba" target */,
+			);
 			path = sorakotoba;
 			sourceTree = "<group>";
 		};

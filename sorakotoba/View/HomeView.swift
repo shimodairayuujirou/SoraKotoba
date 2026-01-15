@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
         VStack (spacing: 20) {
             HStack{
