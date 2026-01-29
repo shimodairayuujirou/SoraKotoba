@@ -1,8 +1,10 @@
 import SwiftUI
+internal import _LocationEssentials
 
 struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
+    @EnvironmentObject var locationManager: LocationManager
     
     var body: some View {
         VStack (spacing: 20) {
@@ -15,7 +17,12 @@ struct HomeView: View {
                 }
             }
             Spacer()
-            Text("HomePage")
+            if let location = locationManager.location {
+                Text("lat: \(location.coordinate.latitude)")
+                Text("lon: \(location.coordinate.longitude)")
+            } else {
+                Text("位置情報が取得できませんでした")
+            }
             Spacer()
             HStack{
                 Spacer()
