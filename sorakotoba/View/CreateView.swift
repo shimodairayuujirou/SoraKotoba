@@ -1,25 +1,23 @@
 import SwiftUI
 
 struct CreateView: View {
-
     @StateObject private var viewModel = CreatePostViewModel()
     @Environment(\.dismiss) private var dismiss
-
-    let currentWeather = "晴れ"
-    let currentTimeSlot = "夕方"
+    
+    let skyCondition: SkyCondition
 
     var body: some View {
         VStack(spacing: 24) {
 
             // 天気表示
-            VStack(spacing: 4) {
-                Text(currentWeather)
+            HStack(spacing: 4) {
+                Text(skyCondition.weatherText)
                     .font(.title2)
                     .bold()
 
-                Text(currentTimeSlot)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                Text(skyCondition.timeSlotText)
+                    .font(.title2)
+                    .bold()
             }
 
             // 入力エリア
@@ -40,8 +38,8 @@ struct CreateView: View {
             // 投稿ボタン
             Button {
                 viewModel.createPost(
-                    weather: currentWeather,
-                    timeSlot: currentTimeSlot
+                    weather: skyCondition.weather,
+                    timeSlot: skyCondition.timeSlot
                 )
                 dismiss()
             } label: {

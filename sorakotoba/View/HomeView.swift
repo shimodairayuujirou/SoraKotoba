@@ -23,6 +23,20 @@ struct HomeView: View {
             } else {
                 Text("位置情報が取得できませんでした")
             }
+            if let condition = viewModel.skyCondition {
+                Text(condition.weatherText)
+                Text(condition.timeSlotText)
+            } else if viewModel.isLoading {
+                Text("天気取得中…")
+            }
+
+            if let post = viewModel.randomPost {
+                Text(post.text)
+            } else {
+                Text("今の空に合う言葉を共有してみませんか")
+                    .foregroundColor(.secondary)
+            }
+            
             Spacer()
             HStack{
                 Spacer()
@@ -59,10 +73,22 @@ struct HomeView: View {
                 }
                 
                 Spacer()
-                NavigationLink(destination: CreateView()) {
-                    PlusButton()
+                if let condition = viewModel.skyCondition {
+                    NavigationLink(
+                        destination: CreateView(skyCondition: condition)
+                    ) {
+                        PlusButton()
+                    }
                 }
             }
+        }
+        .onChange(of: locationManager.location) { location in
+            guard let location else { return }
+
+            viewModel.fetchWeather(
+                lat: location.coordinate.latitude,
+                lon: location.coordinate.longitude
+            )
         }
         .padding(EdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20))
         .frame(maxWidth: .infinity, maxHeight: .infinity)

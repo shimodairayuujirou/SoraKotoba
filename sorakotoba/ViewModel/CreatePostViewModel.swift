@@ -3,7 +3,7 @@ import Combine
 import FirebaseAuth
 import FirebaseFirestore
 
-final class CreatePostViewModel: ObservableObject {    
+final class CreatePostViewModel: ObservableObject {
 
     @Published var text: String = ""
     @Published var isPosting = false
@@ -11,7 +11,10 @@ final class CreatePostViewModel: ObservableObject {
 
     private let db = Firestore.firestore()
 
-    func createPost(weather: String, timeSlot: String) {
+    func createPost(
+        weather: SkyWeather,
+        timeSlot: TimeSlot
+    ) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
 
         isPosting = true
@@ -19,8 +22,8 @@ final class CreatePostViewModel: ObservableObject {
         let data: [String: Any] = [
             "userId": uid,
             "text": text,
-            "weather": weather,
-            "timeSlot": timeSlot,
+            "weather": weather.rawValue,
+            "timeSlot": timeSlot.rawValue,
             "createdAt": Timestamp()
         ]
 

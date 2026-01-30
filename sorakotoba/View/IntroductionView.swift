@@ -14,6 +14,6 @@ struct IntroIntroductionView: View {
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: "#F1F1E6").ignoresSafeArea())
+        .background(Color(hex: "#D1E4FF").ignoresSafeArea())
     }
 }

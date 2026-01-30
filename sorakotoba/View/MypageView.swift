@@ -12,9 +12,13 @@ struct MypageView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    NavigationLink(destination: CreateView()) {
-                        PlusButton()
-                    }
+//                    if let condition = viewModel.skyCondition {
+//                        NavigationLink(
+//                            destination: CreateView(skyCondition: condition)
+//                        ) {
+//                            PlusButton()
+//                        }
+//                    }
                 }
             }
             .padding(EdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20))
